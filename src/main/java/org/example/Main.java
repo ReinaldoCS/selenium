@@ -13,13 +13,23 @@ public class Main {
     public static void main(String[] args) throws MalformedURLException {
         System.out.println("Hello world!");
 
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless"); // habilitar para executar sem abrir o browser
-        options.addArguments("--no-sandbox"); // habilitar para executar sem abrir o browser
-        options.addArguments("--start-maximized"); // habilitar para executar sem abrir o browser
+//        ChromeOptions options = new ChromeOptions();
+//        options.addArguments("--headless"); // habilitar para executar sem abrir o browser
+//        options.addArguments("--no-sandbox"); // habilitar para executar sem abrir o browser
+//        options.addArguments("--start-maximized"); // habilitar para executar sem abrir o browser
 
 //        WebDriver driver = new ChromeDriver(options);
-        WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), options);
+
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.setCapability("browserVersion", "100");
+        chromeOptions.setCapability("platformName", "Windows");
+        // Mostrando na Grid UI o nome de um teste ao invés de uma session id
+        chromeOptions.setCapability("se:name", "My simple test");
+        // Outros tipos de metadara podem ser visualizados na Grid UI
+        // ao clicar na informação de sessão ou via GraphQL
+        chromeOptions.setCapability("se:sampleMetadata", "Valor exemplo de Metadata");
+        WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444"), chromeOptions);
+
 
         driver.manage().window().maximize();
         driver.get("https://www.google.com");
