@@ -31,7 +31,7 @@ public class Main {
         chromeOptions.addArguments("--headless"); // habilitar para executar sem abrir o browser
         chromeOptions.addArguments("--no-sandbox"); // habilitar para executar sem abrir o browser
         chromeOptions.addArguments("--start-maximized"); // habilitar para execut
-        WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), chromeOptions);
+        WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444"), chromeOptions);
 
         System.out.println("asdasdsadasd");
 
