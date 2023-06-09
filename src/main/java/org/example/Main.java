@@ -4,9 +4,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class Main {
-    public static void main(String[] args)  {
+    public static void main(String[] args) throws MalformedURLException {
         System.out.println("Hello world!");
 
         ChromeOptions options = new ChromeOptions();
@@ -14,7 +18,8 @@ public class Main {
         options.addArguments("--no-sandbox"); // habilitar para executar sem abrir o browser
         options.addArguments("--start-maximized"); // habilitar para executar sem abrir o browser
 
-        WebDriver driver = new ChromeDriver(options);
+//        WebDriver driver = new ChromeDriver(options);
+        WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), options);
 
         driver.manage().window().maximize();
         driver.get("https://www.google.com");
