@@ -33,6 +33,8 @@ public class Main {
         chromeOptions.addArguments("--start-maximized"); // habilitar para execut
         WebDriver driver = new RemoteWebDriver(new URL("http://chrome:4444/wd/hub"), chromeOptions);
 
+        System.out.println("asdasdsadasd");
+
 
         driver.manage().window().maximize();
         driver.get("https://www.google.com");
