@@ -28,7 +28,7 @@ public class Main {
         // Outros tipos de metadara podem ser visualizados na Grid UI
         // ao clicar na informação de sessão ou via GraphQL
         chromeOptions.setCapability("se:sampleMetadata", "Valor exemplo de Metadata");
-        WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), chromeOptions);
+        WebDriver driver = new RemoteWebDriver(new URL("http://chrome:4444/wd/hub"), chromeOptions);
 
 
         driver.manage().window().maximize();
