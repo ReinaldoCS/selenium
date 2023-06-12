@@ -43,7 +43,7 @@ public class Main {
         ChromeOptions browserOptions = new ChromeOptions();
 
         browserOptions.setPlatformName("Windows 10");
-        browserOptions.setBrowserVersion("92");
+        browserOptions.setBrowserVersion("114");
         Map<String, Object> cloudOptions = new HashMap<>();
         cloudOptions.put("build", "1.0");
         cloudOptions.put("name", "primeiro teste");
