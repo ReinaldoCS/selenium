@@ -1,15 +1,13 @@
 package org.example;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.HashMap;
-import java.util.Map;
 
 public class Main {
     public static void main(String[] args) throws MalformedURLException {
@@ -21,7 +19,8 @@ public class Main {
 //        options.addArguments("--start-maximized"); // habilitar para executar sem abrir o browser
 
 //        WebDriver driver = new ChromeDriver(options);
-
+//        System.setProperty("webdriver.chrome.driver", "caminho/para/o/chromedriver");
+        WebDriverManager.chromedriver().setup();
         ChromeOptions chromeOptions = new ChromeOptions();
 //        chromeOptions.setCapability("browserVersion", "100");
 //        chromeOptions.setCapability("platformName", "Windows");
@@ -32,7 +31,7 @@ public class Main {
 //        chromeOptions.setCapability("se:sampleMetadata", "Valor exemplo de Metadata");
 //        chromeOptions.addArguments("--headless"); // habilitar para executar sem abrir o browser
 //        chromeOptions.addArguments("--no-sandbox"); // habilitar para executar sem abrir o browser
-//        chromeOptions.addArguments("--start-maximized"); // habilitar para execut
+//        chromeOptions.addArguments("--start-maximized"); // habilitar para executa
 
 //        Map<String, Object> cloudOptions = new HashMap<>();
 //        cloudOptions.put("name", "teste");
@@ -40,7 +39,6 @@ public class Main {
         WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), chromeOptions);
 
         System.out.println("asdasdsadasd");
-
 
         driver.manage().window().maximize();
         driver.get("https://www.google.com");
