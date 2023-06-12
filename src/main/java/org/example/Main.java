@@ -21,13 +21,13 @@ public class Main {
 //        WebDriver driver = new ChromeDriver(options);
 
         ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.setCapability("browserVersion", "100");
-        chromeOptions.setCapability("platformName", "Windows");
+//        chromeOptions.setCapability("browserVersion", "100");
+//        chromeOptions.setCapability("platformName", "Windows");
         // Mostrando na Grid UI o nome de um teste ao invés de uma session id
-        chromeOptions.setCapability("se:name", "My simple test");
+//        chromeOptions.setCapability("se:name", "My simple test");
         // Outros tipos de metadara podem ser visualizados na Grid UI
         // ao clicar na informação de sessão ou via GraphQL
-        chromeOptions.setCapability("se:sampleMetadata", "Valor exemplo de Metadata");
+//        chromeOptions.setCapability("se:sampleMetadata", "Valor exemplo de Metadata");
         chromeOptions.addArguments("--headless"); // habilitar para executar sem abrir o browser
         chromeOptions.addArguments("--no-sandbox"); // habilitar para executar sem abrir o browser
         chromeOptions.addArguments("--start-maximized"); // habilitar para execut
