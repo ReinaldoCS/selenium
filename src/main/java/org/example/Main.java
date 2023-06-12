@@ -3,6 +3,7 @@ package org.example;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -14,13 +15,16 @@ import java.util.Map;
 public class Main {
     public static void main(String[] args) throws MalformedURLException {
         System.out.println("Hello world!");
+        WebDriverManager.chromedriver().setup();
 
-//        ChromeOptions options = new ChromeOptions();
-//        options.addArguments("--headless"); // habilitar para executar sem abrir o browser
-//        options.addArguments("--no-sandbox"); // habilitar para executar sem abrir o browser
-//        options.addArguments("--start-maximized"); // habilitar para executar sem abrir o browser
 
-//        WebDriver driver = new ChromeDriver(options);
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless"); // habilitar para executar sem abrir o browser
+        options.addArguments("--no-sandbox"); // habilitar para executar sem abrir o browser
+        options.addArguments("--start-maximized"); // habilitar para executar sem abrir o browser
+
+        WebDriver driver = new ChromeDriver(options);
+
 //        System.setProperty("webdriver.chrome.driver", "caminho/para/o/chromedriver");
 //        ChromeOptions chromeOptions = new ChromeOptions();
 //        chromeOptions.setCapability("browserVersion", "100");
@@ -38,25 +42,22 @@ public class Main {
 //        cloudOptions.put("name", "teste");
 //        chromeOptions.setCapability("cloud:options", cloudOptions);
 
-        WebDriverManager.chromedriver().setup();
-
-        ChromeOptions browserOptions = new ChromeOptions();
-
-        browserOptions.setPlatformName("linux");
-        browserOptions.setBrowserVersion("114.0");
-        browserOptions.setCapability("se:noVncPort", "7900");
-        browserOptions.setCapability("se:vncEnabled", "true");
-
-        Map<String, Object> cloudOptions = new HashMap<>();
-        cloudOptions.put("build", "1.0");
-        cloudOptions.put("name", "primeiro teste");
-        browserOptions.setCapability("cloud:options", cloudOptions);
-
-        browserOptions.addArguments("--no-sandbox"); // Bypass OS security model
-        browserOptions.addArguments("--disable-dev-shm-usage");// overcome limited resource problems
-        browserOptions.addArguments("--headless");
-
-        WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), browserOptions);
+//        ChromeOptions browserOptions = new ChromeOptions();
+//        browserOptions.setPlatformName("linux");
+//        browserOptions.setBrowserVersion("114.0");
+//        browserOptions.setCapability("se:noVncPort", "7900");
+//        browserOptions.setCapability("se:vncEnabled", "true");
+//
+//        Map<String, Object> cloudOptions = new HashMap<>();
+//        cloudOptions.put("build", "1.0");
+//        cloudOptions.put("name", "primeiro teste");
+//        browserOptions.setCapability("cloud:options", cloudOptions);
+//
+//        browserOptions.addArguments("--no-sandbox"); // Bypass OS security model
+//        browserOptions.addArguments("--disable-dev-shm-usage");// overcome limited resource problems
+//        browserOptions.addArguments("--headless");
+//
+//        WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), browserOptions);
 
         System.out.println("asdasdsadasd");
 
