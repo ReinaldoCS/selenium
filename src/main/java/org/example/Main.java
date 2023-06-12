@@ -8,6 +8,8 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Main {
     public static void main(String[] args) throws MalformedURLException {
@@ -20,8 +22,7 @@ public class Main {
 
 //        WebDriver driver = new ChromeDriver(options);
 //        System.setProperty("webdriver.chrome.driver", "caminho/para/o/chromedriver");
-        WebDriverManager.chromedriver().setup();
-        ChromeOptions chromeOptions = new ChromeOptions();
+//        ChromeOptions chromeOptions = new ChromeOptions();
 //        chromeOptions.setCapability("browserVersion", "100");
 //        chromeOptions.setCapability("platformName", "Windows");
         // Mostrando na Grid UI o nome de um teste ao invés de uma session id
@@ -36,7 +37,18 @@ public class Main {
 //        Map<String, Object> cloudOptions = new HashMap<>();
 //        cloudOptions.put("name", "teste");
 //        chromeOptions.setCapability("cloud:options", cloudOptions);
-        WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), chromeOptions);
+
+        WebDriverManager.chromedriver().setup();
+
+        ChromeOptions browserOptions = new ChromeOptions();
+
+        browserOptions.setPlatformName("Windows 10");
+        browserOptions.setBrowserVersion("92");
+        Map<String, Object> cloudOptions = new HashMap<>();
+        cloudOptions.put("build", "1.0");
+        cloudOptions.put("name", "primeiro teste");
+        browserOptions.setCapability("cloud:options", cloudOptions);
+        WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), browserOptions);
 
         System.out.println("asdasdsadasd");
 
