@@ -42,8 +42,11 @@ public class Main {
 
         ChromeOptions browserOptions = new ChromeOptions();
 
-        browserOptions.setPlatformName("Windows 10");
-        browserOptions.setBrowserVersion("114");
+        browserOptions.setPlatformName("linux");
+        browserOptions.setBrowserVersion("114.0");
+        browserOptions.setCapability("se:noVncPort", "7900");
+        browserOptions.setCapability("se:vncEnabled", "true");
+
         Map<String, Object> cloudOptions = new HashMap<>();
         cloudOptions.put("build", "1.0");
         cloudOptions.put("name", "primeiro teste");
