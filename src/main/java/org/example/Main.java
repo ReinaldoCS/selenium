@@ -8,6 +8,8 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Main {
     public static void main(String[] args) throws MalformedURLException {
@@ -24,13 +26,17 @@ public class Main {
 //        chromeOptions.setCapability("browserVersion", "100");
 //        chromeOptions.setCapability("platformName", "Windows");
         // Mostrando na Grid UI o nome de um teste ao invés de uma session id
-        chromeOptions.setCapability("se:name", "My simple test");
+//        chromeOptions.setCapability("se:name", "My simple test");
         // Outros tipos de metadara podem ser visualizados na Grid UI
         // ao clicar na informação de sessão ou via GraphQL
-        chromeOptions.setCapability("se:sampleMetadata", "Valor exemplo de Metadata");
+//        chromeOptions.setCapability("se:sampleMetadata", "Valor exemplo de Metadata");
 //        chromeOptions.addArguments("--headless"); // habilitar para executar sem abrir o browser
 //        chromeOptions.addArguments("--no-sandbox"); // habilitar para executar sem abrir o browser
 //        chromeOptions.addArguments("--start-maximized"); // habilitar para execut
+
+        Map<String, Object> cloudOptions = new HashMap<>();
+        cloudOptions.put("name", "teste");
+        chromeOptions.setCapability("cloud:options", cloudOptions);
         WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), chromeOptions);
 
         System.out.println("asdasdsadasd");
