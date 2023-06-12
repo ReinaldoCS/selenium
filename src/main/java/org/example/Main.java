@@ -51,6 +51,11 @@ public class Main {
         cloudOptions.put("build", "1.0");
         cloudOptions.put("name", "primeiro teste");
         browserOptions.setCapability("cloud:options", cloudOptions);
+
+        browserOptions.addArguments("--no-sandbox"); // Bypass OS security model
+        browserOptions.addArguments("--disable-dev-shm-usage");// overcome limited resource problems
+        browserOptions.addArguments("--headless");
+
         WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), browserOptions);
 
         System.out.println("asdasdsadasd");
