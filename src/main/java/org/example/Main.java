@@ -34,9 +34,9 @@ public class Main {
 //        chromeOptions.addArguments("--no-sandbox"); // habilitar para executar sem abrir o browser
 //        chromeOptions.addArguments("--start-maximized"); // habilitar para execut
 
-        Map<String, Object> cloudOptions = new HashMap<>();
-        cloudOptions.put("name", "teste");
-        chromeOptions.setCapability("cloud:options", cloudOptions);
+//        Map<String, Object> cloudOptions = new HashMap<>();
+//        cloudOptions.put("name", "teste");
+//        chromeOptions.setCapability("cloud:options", cloudOptions);
         WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), chromeOptions);
 
         System.out.println("asdasdsadasd");
