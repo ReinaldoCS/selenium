@@ -13,13 +13,7 @@ import java.time.Duration;
 public class Main {
     public static void main(String[] args) throws Exception {
         System.out.println("Hello world!");
-        WebDriverManager.chromedriver().setup();
-
-
-//        ChromeOptions options = new ChromeOptions();
-//        options.addArguments("--headless"); // habilitar para executar sem abrir o browser
-//        options.addArguments("--no-sandbox"); // habilitar para executar sem abrir o browser
-//        options.addArguments("--start-maximized"); // habilitar para executar sem abrir o browser
+//        WebDriverManager.chromedriver().setup();
 
         WebDriver driver = new ChromeDriver();
         System.out.println("asdasdsadasd");
