@@ -56,7 +56,7 @@ public class Main {
         browserOptions.addArguments("--disable-dev-shm-usage");// overcome limited resource problems
         browserOptions.addArguments("--headless");
 
-        WebDriver driver = new RemoteWebDriver(new URL("http://172.24.86.13:4444/wd/hub"), browserOptions);
+        WebDriver driver = new RemoteWebDriver(new URL("http://172.28.87.90:4444/wd/hub"), browserOptions);
 
         System.out.println("asdasdsadasd");
 
